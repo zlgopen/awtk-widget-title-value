@@ -1,5 +1,6 @@
 <window theme="main" move_focus_prev_key="up" move_focus_next_key="down">
-  <list_view x="0"  y="10" w="100%" h="-80" item_height="36">
+  <label x="c" y="0" w="100%" h="50" text="Up/Mode To Move Foucs, \nReturn to Activate/Deactivate item"/>
+  <list_view x="0"  y="50" w="100%" h="-120" item_height="36">
     <scroll_view name="view" x="0"  y="0" w="100%" h="100%">
       
       <title_value text="Humidity" style="grab_focus" return_key_to_grab_focus="true">
@@ -18,5 +19,5 @@
     </scroll_view>
     <scroll_bar_m name="bar" x="right" y="0" w="6" h="100%" value="0"/>
   </list_view>
-  <button x="c" y="b:20" w="80" h="30" floating="true" name="close" text="Close"/>
+  <button x="c" y="b:20" w="80" h="30" name="close" text="Close"/>
 </window>
