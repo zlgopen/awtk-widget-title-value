@@ -52,7 +52,6 @@ static ret_t title_value_get_prop(widget_t* widget, const char* name, value_t* v
 }
 
 static ret_t title_value_set_prop(widget_t* widget, const char* name, const value_t* v) {
-  title_value_t* title_value = TITLE_VALUE(widget);
   return_value_if_fail(widget != NULL && name != NULL && v != NULL, RET_BAD_PARAMS);
 
   if (tk_str_eq(name, TITLE_VALUE_PROP_RETURN_KEY_TO_GRAB_FOCUS)) {
@@ -74,8 +73,6 @@ static ret_t title_value_on_destroy(widget_t* widget) {
 }
 
 static ret_t title_value_on_paint_self(widget_t* widget, canvas_t* c) {
-  title_value_t* title_value = TITLE_VALUE(widget);
-
   widget_paint_helper(widget, c, NULL, NULL);
 
   return RET_OK;
@@ -96,7 +93,6 @@ static ret_t title_value_on_event(widget_t* widget, event_t* e) {
 
   switch (e->type) {
     case EVT_KEY_DOWN: {
-      key_event_t* evt = (key_event_t*)e;
       if (title_value->grab_focus && value != NULL) {
         widget_dispatch(value, e);
         ret = RET_STOP;
