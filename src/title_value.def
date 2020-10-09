@@ -1,0 +1,8 @@
+LIBRARY   title_value
+EXPORTS
+    title_value_register
+    title_value_supported_render_mode
+    title_value_create
+    title_value_cast
+    title_value_set_grab_focus
+    title_value_set_return_key_to_grab_focus

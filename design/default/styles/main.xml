@@ -1,0 +1,23 @@
+<number_label>
+  <style name="default" font_size="18">
+    <normal text_color="green" />
+  </style>
+</number_label>
+
+<title_value text_align_h="left" margin="2">
+  <style name="default" font_size="20">
+    <normal text_color="black" />
+  </style>
+
+  <style name="grab_focus" font_size="20">
+    <normal text_color="black" />
+    <focused text_color="black" border_color="green"/>
+    <focus_grabed text_color="black" border_color="green" bg_color="#e0e0e0"/>
+  </style>
+</title_value> 
+
+<text_selector>
+  <style name="default" text_color="black" border_color="#606060">
+    <normal/>
+  </style>
+</text_selector>

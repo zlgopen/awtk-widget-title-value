@@ -1,0 +1,177 @@
+[
+  {
+    "params": [],
+    "annotation": {
+      "global": true
+    },
+    "desc": "注册控件。",
+    "name": "title_value_register",
+    "return": {
+      "type": "ret_t",
+      "desc": "返回RET_OK表示成功，否则表示失败。"
+    },
+    "type": "method",
+    "header": "src/title_value_register.h",
+    "level": 1
+  },
+  {
+    "params": [],
+    "annotation": {
+      "global": true
+    },
+    "desc": "获取支持的渲染模式。",
+    "name": "title_value_supported_render_mode",
+    "return": {
+      "type": "const char*",
+      "desc": "返回渲染模式。"
+    },
+    "type": "method",
+    "header": "src/title_value_register.h",
+    "level": 1
+  },
+  {
+    "type": "class",
+    "methods": [
+      {
+        "params": [
+          {
+            "type": "widget_t*",
+            "name": "parent",
+            "desc": "父控件"
+          },
+          {
+            "type": "xy_t",
+            "name": "x",
+            "desc": "x坐标"
+          },
+          {
+            "type": "xy_t",
+            "name": "y",
+            "desc": "y坐标"
+          },
+          {
+            "type": "wh_t",
+            "name": "w",
+            "desc": "宽度"
+          },
+          {
+            "type": "wh_t",
+            "name": "h",
+            "desc": "高度"
+          }
+        ],
+        "annotation": {
+          "constructor": true,
+          "scriptable": true
+        },
+        "desc": "创建title_value对象",
+        "name": "title_value_create",
+        "return": {
+          "type": "widget_t*",
+          "desc": "title_value对象。"
+        }
+      },
+      {
+        "params": [
+          {
+            "type": "widget_t*",
+            "name": "widget",
+            "desc": "title_value对象。"
+          }
+        ],
+        "annotation": {
+          "cast": true,
+          "scriptable": true
+        },
+        "desc": "转换为title_value对象(供脚本语言使用)。",
+        "name": "title_value_cast",
+        "return": {
+          "type": "widget_t*",
+          "desc": "title_value对象。"
+        }
+      },
+      {
+        "params": [
+          {
+            "type": "widget_t*",
+            "name": "widget",
+            "desc": "控件对象。"
+          },
+          {
+            "type": "bool_t",
+            "name": "grab_focus",
+            "desc": "是否抓住焦点。"
+          }
+        ],
+        "annotation": {
+          "scriptable": true
+        },
+        "desc": "设置控件是否抓住焦点。\n\n> 抓住焦点之后，方向键不再切换焦点。",
+        "name": "title_value_set_grab_focus",
+        "return": {
+          "type": "ret_t",
+          "desc": "返回RET_OK表示成功，否则表示失败。"
+        }
+      },
+      {
+        "params": [
+          {
+            "type": "widget_t*",
+            "name": "widget",
+            "desc": "控件对象。"
+          },
+          {
+            "type": "bool_t",
+            "name": "return_key_to_grab_focus",
+            "desc": "是否用回车键来触发grab focus状态。"
+          }
+        ],
+        "annotation": {
+          "scriptable": true
+        },
+        "desc": "设置控件是否用回车键来触发grab focus状态。",
+        "name": "title_value_set_return_key_to_grab_focus",
+        "return": {
+          "type": "ret_t",
+          "desc": "返回RET_OK表示成功，否则表示失败。"
+        }
+      }
+    ],
+    "events": [],
+    "properties": [
+      {
+        "name": "grab_focus",
+        "desc": "是否抓住焦点。抓住焦点之后，方向键不再切换焦点。\n\n> 此时可以用上下键修改控件的值，主要在只有左右键和OK键时的硬件平台使用。",
+        "type": "bool_t",
+        "annotation": {
+          "set_prop": true,
+          "get_prop": true,
+          "readable": true
+        }
+      },
+      {
+        "name": "return_key_to_grab_focus",
+        "desc": "是否用回车键来触发grab focus状态。\n\n> 在只有方向键和OK键时的硬件平台，配合grab_focus使用：\n> * 先用方向键切换焦点，切换到指定的控件。\n> * 再按OK键进入编辑状态，此时用方向键修改值。\n> * 完成后按OK键，退出编辑状态。\n> * 方向键继续用于切换焦点。",
+        "type": "bool_t",
+        "annotation": {
+          "set_prop": true,
+          "get_prop": true,
+          "readable": true,
+          "persitent": true,
+          "design": true,
+          "scriptable": true
+        }
+      }
+    ],
+    "header": "title_value/title_value.h",
+    "desc": "用于显示标题和值的控件。\n在xml中使用\"title\\_value\"标签创建控件。如：\n\n```xml\n<!-- ui -->\n<title_value x=\"c\" y=\"50\" w=\"100\" h=\"100\"/>\n```\n\n可用通过style来设置控件的显示风格，如字体的大小和颜色等等。如：\n\n```xml\n<!-- style -->\n<title_value>\n<style name=\"default\" font_size=\"32\">\n<normal text_color=\"black\" />\n</style>\n</title_value>\n```",
+    "name": "title_value_t",
+    "parent": "widget_t",
+    "annotation": {
+      "scriptable": true,
+      "design": true,
+      "widget": true
+    },
+    "level": 2
+  }
+]

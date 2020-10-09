@@ -1,0 +1,22 @@
+<window theme="main" move_focus_prev_key="up" move_focus_next_key="down">
+  <list_view x="0"  y="10" w="100%" h="-80" item_height="36">
+    <scroll_view name="view" x="0"  y="0" w="100%" h="100%">
+      
+      <title_value text="Humidity" style="grab_focus" return_key_to_grab_focus="true">
+        <number_label name="humidity" x="r:10" y="m" w="80" h="90%" format="%d" value="100"/>
+      </title_value>
+
+      <title_value text="Temperature" style="grab_focus" return_key_to_grab_focus="true">
+        <number_label name="temperature" x="r:10" y="m" w="80" h="90%" format="%d" value="100"/>
+      </title_value>
+      
+      <title_value text="Power" style="grab_focus" return_key_to_grab_focus="true">
+        <text_selector name="color" x="r:10" y="m" w="80" h="90%"
+          options="开;关" visible_nr="1" text="red"/>
+      </title_value>
+
+    </scroll_view>
+    <scroll_bar_m name="bar" x="right" y="0" w="6" h="100%" value="0"/>
+  </list_view>
+  <button x="c" y="b:20" w="80" h="30" floating="true" name="close" text="Close"/>
+</window>
