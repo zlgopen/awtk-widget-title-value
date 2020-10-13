@@ -137,6 +137,7 @@ ret_t title_value_set_return_key_to_grab_focus(widget_t* widget, bool_t return_k
 const char* s_title_value_properties[] = {TITLE_VALUE_PROP_RETURN_KEY_TO_GRAB_FOCUS, NULL};
 
 TK_DECL_VTABLE(title_value) = {.size = sizeof(title_value_t),
+                               .disallow_children_focusable = TRUE,
                                .type = WIDGET_TYPE_TITLE_VALUE,
                                .clone_properties = s_title_value_properties,
                                .persistent_properties = s_title_value_properties,

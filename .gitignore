@@ -29,3 +29,7 @@ bin/hello*
 .vscode
 .vs
 res
+*.os
+*.dylib
+*.pyc
+__pycache__

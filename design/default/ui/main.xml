@@ -16,6 +16,17 @@
           options="开;关" visible_nr="1" text="red"/>
       </title_value>
 
+      <title_value text="edit" style="grab_focus" return_key_to_grab_focus="true">
+        <edit x="r" y="0" w="70%" h="100%" right_margin="16" tips="uint(0-150) auto_fix" input_type="uint" min="0" max="150" step="1" auto_fix="true" style="number">
+          <button name="inc" repeat="300" style="spinbox_up" x="right" y="0" w="15" h="50%" />
+          <button name="dec" repeat="300" style="spinbox_down" x="right" y="bottom" w="15" h="50%" />
+        </edit>
+      </title_value>
+
+      <title_value text="combox" style="grab_focus" return_key_to_grab_focus="true">
+        <combo_box x="r" y="0" w="45%" h="100%" readonly="true" text="left" options="left;center;right;"/>
+      </title_value>
+
     </scroll_view>
     <scroll_bar_m name="bar" x="right" y="0" w="6" h="100%" value="0"/>
   </list_view>
